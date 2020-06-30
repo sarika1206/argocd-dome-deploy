@@ -1,21 +1,42 @@
-apiVersion: apps/v1beta2
+## ------------------- Debian Deployment ------------------- #
+
 kind: Deployment
+apiVersion: apps/v1
 metadata:
-  name: demo
+  labels:
+    k8s-app: debian-test
+  name: debian-test
 spec:
   replicas: 1
-  revisionHistoryLimit: 3
-  progressDeadlineSeconds: 30
+  revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app: demo
+      k8s-app: debian-test
   template:
     metadata:
       labels:
-        app: demo
+        k8s-app: debian-test
     spec:
       containers:
-      - image: sarika1206/argocd-demo:f27903964ba8e31ad89c31379e300a35fe1632a3
-        name: demo
+      - name: debian-test
+        image: 738507247612.dkr.ecr.us-west-2.amazonaws.com/k8s-debian-test:latest 
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
         ports:
-        - containerPort: 8080
+        - containerPort: 80
+          protocol: TCP
+        livenessProbe:
+          httpGet:
+            scheme: HTTP
+            path: /
+            port: 80
+          initialDelaySeconds: 30
+          timeoutSeconds: 30
+
+---

@@ -2,15 +2,12 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app.kubernetes.io/component: application
-    app.kubernetes.io/name: debian-test
-    app.kubernetes.io/part-of: argocd
+    k8s-app: debian-test
   name: debian-test
 spec:
   ports:
-  - name: debian-test
-    port: 8080
-    protocol: TCP
-    targetPort: 8080
+  - port: 80
+    targetPort: 80
+  type: NodePort
   selector:
-    app.kubernetes.io/name: debian-test
+    k8s-app: debian-test

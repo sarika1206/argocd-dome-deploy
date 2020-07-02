@@ -11,11 +11,11 @@ spec:
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      k8s-app: debian-test
+      app: debian-test
   template:
     metadata:
       labels:
-        k8s-app: debian-test
+        app: debian-test
     spec:
       containers:
       - name: debian-test
@@ -30,13 +30,13 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 80
-          protocol: TCP
-        livenessProbe:
-          httpGet:
-            scheme: HTTP
-            path: /
-            port: 80
-          initialDelaySeconds: 30
-          timeoutSeconds: 30
+      #    protocol: TCP
+     #   livenessProbe:
+     #     httpGet:
+     #       scheme: HTTP
+     #       path: /
+     #       port: 80
+     #     initialDelaySeconds: 30
+     #     timeoutSeconds: 30
 
 ---

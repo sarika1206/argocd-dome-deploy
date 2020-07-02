@@ -6,8 +6,8 @@ metadata:
   name: debian-test
 spec:
   ports:
-  - port: 80
-    targetPort: 80
+  - port: 8080
+    targetPort: 8080
   type: ClusterIP
   selector:
     k8s-app: debian-test

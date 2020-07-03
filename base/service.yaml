@@ -9,10 +9,10 @@ metadata:
   name: debian-test
 spec:
   ports:
-  - name: debian-test
-    port: 8080
-    protocol: TCP
-    targetPort: 8080
+    - name: debian-test
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
   selector:
     app: debian-test
  #   app.kubernetes.io/name: debian-test

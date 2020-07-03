@@ -13,4 +13,5 @@ spec:
     protocol: TCP
     targetPort: 8080
   selector:
+    app: debian-test
     app.kubernetes.io/name: debian-test

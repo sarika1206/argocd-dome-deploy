@@ -8,8 +8,8 @@ bases:
 #- ../base/service.yaml
 
 patchesStrategicMerge:
-- ./deployment-patch.yaml
+- deployment-patch.yaml
 
 images:
 - name: sarika1206/argocd-demo
-  newTag: 3824e3ce01af4947d4375c2d8fb22159d12e5c05
+  newTag: 3824e3ce01af4947d4375c2d8fb22159d12e5c04

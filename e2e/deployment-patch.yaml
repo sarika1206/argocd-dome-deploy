@@ -1,12 +1,12 @@
 apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
-  name: debian-test
+  name: debian-test-1
 spec:
   template:
     spec:
       containers:
-      - name: debian-test
+      - name: debian-test-1
         env:
         - name: ENVIRONMENT
           value: e2e

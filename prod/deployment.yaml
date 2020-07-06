@@ -1,0 +1,43 @@
+## ------------------- Debian Deployment ------------------- #
+
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+ # labels:
+ #   app: debian-test-prod
+  name: debian-test-prod
+spec:
+  replicas: 2
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      k8s-app: debian-test-prod
+  template:
+    metadata:
+      labels:
+        k8s-app: debian-test-prod
+      name: debian-test-prod
+    spec:
+      containers:
+      - name: debian-test-prod
+        image: 738507247612.dkr.ecr.us-west-2.amazonaws.com/k8s-debian-test:latest 
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
+      #    protocol: TCP
+     #   livenessProbe:
+     #     httpGet:
+     #       scheme: HTTP
+     #       path: /
+     #       port: 80
+     #     initialDelaySeconds: 30
+     #     timeoutSeconds: 30
+
+---

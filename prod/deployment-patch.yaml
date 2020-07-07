@@ -6,7 +6,7 @@ spec:
   template:
     spec:
       containers:
-      - name: debian-test
+      - name: debian-prod
         env:
         - name: ENVIRONMENT
           value: prod

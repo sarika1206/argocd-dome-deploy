@@ -7,6 +7,6 @@ spec:
     spec:
       containers:
       - name: debian-test
-        env:
-        - name: ENVIRONMENT
-          value: e2e
+        env: prod
+     #   - name: ENVIRONMENT
+     #     value: e2e

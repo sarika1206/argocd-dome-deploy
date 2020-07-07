@@ -9,4 +9,4 @@ spec:
       - name: debian-test
         env:
         - name: ENVIRONMENT
-          value: prod
+          value: e2e

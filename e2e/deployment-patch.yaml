@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Rollout
+kind: Deployment
 metadata:
   name: debian-test
 spec:
@@ -10,14 +10,4 @@ spec:
         env:
         - name: ENVIRONMENT
           value: e2e
-strategy:
-# --- Everything above this comment are the same as a deployment ---
-    canary: # A new field for configurable Canary options
-      maxSurge: "10%"
-      maxUnavailable: 0
-      steps:
-      - setWeight: 10
-      - pause:
-          duration: 30 #seconds
-      - setWeight: 50
-      - pause: {}
+         

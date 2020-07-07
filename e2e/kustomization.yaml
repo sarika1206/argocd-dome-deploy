@@ -12,5 +12,4 @@ patchesStrategicMerge:
 
 images:
 - name: sarika1206/argocd-demo
-#  newTag: 738507247612.dkr.ecr.us-west-2.amazonaws.com/k8s-debian-test:latest
   newTag: 3824e3ce01af4947d4375c2d8fb22159d12e5c04

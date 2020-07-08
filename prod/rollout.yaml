@@ -10,14 +10,14 @@ spec:
   revisionHistoryLimit: 2
   selector:
     matchLabels:
-      app: prod-test
+      app: debian-test
   template:
     metadata:
       labels:
-        app: prod-test
+        app: debian-test
     spec:
       containers:
-      - name: prod-test
+      - name: debian-test
         image: argoproj/rollouts-demo:blue
         imagePullPolicy: Always
         ports:

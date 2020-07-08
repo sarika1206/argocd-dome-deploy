@@ -3,8 +3,8 @@
 kind: Rollout
 apiVersion: argoproj.io/v1alpha1
 metadata:
-  labels:
-    app: debian-test
+#  labels:
+#    app: debian-test
   name: debian-test
 spec:
   replicas: 2

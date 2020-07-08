@@ -1,0 +1,54 @@
+## ------------------- Debian Deployment ------------------- #
+
+kind: Rollout
+apiVersion: argoproj.io/v1alpha1
+metadata:
+ # labels:
+ #   app: debian-test
+  name: debian-test
+spec:
+  replicas: 2
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      k8s-app: debian-test
+  template:
+    metadata:
+      labels:
+        k8s-app: debian-test
+      name: debian-test
+    spec:
+      containers:
+      - name: debian-test
+        image: 738507247612.dkr.ecr.us-west-2.amazonaws.com/k8s-debian-test:latest 
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
+  strategy:
+# --- Everything above this comment are the same as a deployment ---
+    canary: # A new field for configurable Canary options
+      maxSurge: "10%"
+      maxUnavailable: 0
+      steps:
+      - setWeight: 10
+      - pause:
+          duration: 30 #seconds
+      - setWeight: 50
+      - pause: {}
+      #    protocol: TCP
+     #   livenessProbe:
+     #     httpGet:
+     #       scheme: HTTP
+     #       path: /
+     #       port: 80
+     #     initialDelaySeconds: 30
+     #     timeoutSeconds: 30
+
+---

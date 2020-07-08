@@ -7,8 +7,8 @@ bases:
 #- ../base/deployment.yaml
 #- ../base/service.yaml
 
-patchesStrategicMerge:
-- deployment-patch.yaml
+#patchesStrategicMerge:
+#- deployment-patch.yaml
 
 images:
 - name: sarika1206/argocd-demo

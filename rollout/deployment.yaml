@@ -7,7 +7,7 @@ metadata:
  #   app: debian-test
   name: debian-test
 spec:
-  replicas: 5
+  replicas: 4
   revisionHistoryLimit: 3
   minReadySeconds: 30
   selector:

@@ -3,6 +3,9 @@ kind: Rollout
 metadata:
   name: debian-test
 spec:
+  selector:
+    matchLabels:
+      k8s-app: debian-test
   template:
     spec:
       containers:

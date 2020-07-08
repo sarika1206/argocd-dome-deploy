@@ -3,8 +3,6 @@
 kind: Rollout
 apiVersion: argoproj.io/v1alpha1
 metadata:
-#  labels:
-#    app: debian-test
   name: debian-test
 spec:
   replicas: 2
@@ -31,24 +29,18 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 8080
-#  strategy:
-# --- Everything above this comment are the same as a deployment ---
- #   canary: # A new field for configurable Canary options
- #     maxSurge: "10%"
- #     maxUnavailable: 0
- #     steps:
- #     - setWeight: 10
- #     - pause:
- #         duration: 30 #seconds
- #     - setWeight: 50
- #     - pause: {}
-      #    protocol: TCP
-     #   livenessProbe:
-     #     httpGet:
-     #       scheme: HTTP
-     #       path: /
-     #       port: 80
-     #     initialDelaySeconds: 30
-     #     timeoutSeconds: 30
+  strategy:
+    canary:
+      steps:
+      - setWeight: 20
+      # The following pause step will pause the rollout indefinitely until manually resumed.
+      # Rollouts can be manually resumed by running `kubectl argo rollouts resume ROLLOUT`
+      - pause: {}
+      - setWeight: 40
+      - pause: {duration: 40s}
+      - setWeight: 60
+      - pause: {duration: 20s}
+      - setWeight: 80
+      - pause: {duration: 20s}
 
 ---

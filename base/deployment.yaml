@@ -29,18 +29,4 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 8080
-#  strategy:
-#    canary:
-#      steps:
-#      - setWeight: 20
-      # The following pause step will pause the rollout indefinitely until manually resumed.
-      # Rollouts can be manually resumed by running `kubectl argo rollouts resume ROLLOUT`
-#      - pause: {}
-#      - setWeight: 40
-#      - pause: {duration: 40s}
-#      - setWeight: 60
-#      - pause: {duration: 20s}
-#      - setWeight: 80
-#      - pause: {duration: 20s}
-
----
+        

@@ -3,9 +3,9 @@ kind: Kustomization
 
 bases:
 - ../base
+- rollout.yaml
 
 patchesStrategicMerge:
-- rollout.yaml
 - deployment-patch.yaml
 
 images:

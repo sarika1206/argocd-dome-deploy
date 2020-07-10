@@ -4,8 +4,11 @@ kind: Kustomization
 bases:
 - ../base
 
-patchesStrategicMerge:
+patchesJson6902:
 - ./deployment-patch.yaml
+
+#patchesStrategicMerge:
+#- ./deployment-patch.yaml
 
 images:
 - name: sarika1206/argocd-demo

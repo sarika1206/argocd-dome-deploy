@@ -5,22 +5,22 @@ apiVersion: argoproj.io/v1alpha1
 metadata:
  # labels:
  #   app: debian-test
-  name: debian-test-roll
+  name: debian-test
 spec:
   replicas: 4
   revisionHistoryLimit: 3
   minReadySeconds: 30
   selector:
     matchLabels:
-      k8s-app: debian-test-roll
+      k8s-app: debian-test
   template:
     metadata:
       labels:
-        k8s-app: debian-test-roll
-      name: debian-test-roll
+        k8s-app: debian-test
+      name: debian-test
     spec:
       containers:
-      - name: debian-test-roll
+      - name: debian-test
         image: 738507247612.dkr.ecr.us-west-2.amazonaws.com/k8s-debian-test:latest 
         imagePullPolicy: Always
         resources:

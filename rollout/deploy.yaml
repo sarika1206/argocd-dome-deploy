@@ -20,6 +20,9 @@ spec:
     spec:
       containers:
       - name: debian-test
+        env:
+        - name: ENVIRONMENT
+          value: production
         image: 738507247612.dkr.ecr.us-west-2.amazonaws.com/k8s-debian-test:latest 
         imagePullPolicy: Always
         resources:

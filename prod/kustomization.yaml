@@ -6,7 +6,6 @@ bases:
 
 patchesStrategicMerge:
 - ./deployment-patch.yaml
-- ./rollout.yaml
 
 images:
 - name: sarika1206/argocd-demo

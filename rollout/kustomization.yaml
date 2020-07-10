@@ -4,3 +4,4 @@ kind: Kustomization
 bases:
 - ./deployment.yaml
 - ./service.yaml
+- ./deploy.yaml

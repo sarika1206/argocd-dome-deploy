@@ -13,26 +13,33 @@ spec:
 kind: Rollout
 apiVersion: argoproj.io/v1alpha1
 metadata:
- # labels:
- #   app: debian-test
-  name: debian-test
+  labels:
+    app: debian-test-roll
+  name: debian-test-roll
 spec:
   replicas: 4
   revisionHistoryLimit: 3
   minReadySeconds: 30
   selector:
     matchLabels:
-      k8s-app: debian-test
+      k8s-app: debian-test-roll
   template:
     metadata:
       labels:
-        k8s-app: debian-test
-      name: debian-test
+        k8s-app: debian-test-roll
+      name: debian-test-roll
     spec:
       containers:
-      - name: debian-test
+      - name: debian-test-roll
         image: 738507247612.dkr.ecr.us-west-2.amazonaws.com/k8s-debian-test:latest 
         imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
         ports:
         - containerPort: 8080
   strategy:
@@ -48,4 +55,3 @@ spec:
       - pause: {duration: 20s}
       - setWeight: 80
       - pause: {duration: 20s}
-          

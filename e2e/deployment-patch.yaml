@@ -12,5 +12,5 @@ spec:
       - name: debian-test
         env:
         - name: ENVIRONMENT
-          value: e2e
+          value: staging
          

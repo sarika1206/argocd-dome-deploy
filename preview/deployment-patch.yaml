@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: debian-test
+spec:
+  selector:
+    matchLabels:
+      k8s-app: debian-test
+  template:
+    spec:
+      containers:
+      - name: debian-test
+        env:
+        - name: ENVIRONMENT
+          value: staging
+         

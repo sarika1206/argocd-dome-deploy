@@ -11,11 +11,11 @@ metadata:
    
 spec:
   rules:
-    - host: pocapp3.rel.polysign.io
+    - host: pocapp1.rel.polysign.io
   backend:
     serviceName: debian-test
     servicePort: 8080
   tls:
     - hosts:
-      - pocapp3.rel.polysign.io
+      - pocapp1.rel.polysign.io
       secretName: tls-secret

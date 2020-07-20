@@ -11,7 +11,7 @@ metadata:
    
 spec:
   rules:
-    - host: preview.rel.polysign.io
+    - host: argocdapptest.rel.polysign.io
   backend:
     serviceName: debian-test
     servicePort: 8080

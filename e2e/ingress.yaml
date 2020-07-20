@@ -11,7 +11,7 @@ metadata:
    
 spec:
   rules:
-    - host: pocapp2.rel.polysign.io
+    - host: pocapp1.rel.polysign.io
   backend:
     serviceName: debian-test
     servicePort: 8080

@@ -17,5 +17,5 @@ spec:
     servicePort: 8080
   tls:
     - hosts:
-      - preview.rel.polysign.io
+      - argocdapptest.rel.polysign.io
       secretName: tls-secret

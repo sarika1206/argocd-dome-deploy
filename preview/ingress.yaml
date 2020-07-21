@@ -11,11 +11,19 @@ metadata:
    
 spec:
   rules:
+<<<<<<< HEAD
     - host: pocapp2.rel.polysign.io
+=======
+    - host: argocdapptest.rel.polysign.io
+>>>>>>> c3e43a26ca791a18bfe4daaee52772f72346450e
   backend:
     serviceName: debian-test
     servicePort: 8080
   tls:
     - hosts:
+<<<<<<< HEAD
       - pocapp2.rel.polysign.io
+=======
+      - argocdapptest.rel.polysign.io
+>>>>>>> c3e43a26ca791a18bfe4daaee52772f72346450e
       secretName: tls-secret

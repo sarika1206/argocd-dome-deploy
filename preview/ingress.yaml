@@ -2,7 +2,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: debian-test
+  name: preview-ingress
   namespace: preview
   annotations:
           # cert-manager.io/cluster-issuer: letsencrypt-prod

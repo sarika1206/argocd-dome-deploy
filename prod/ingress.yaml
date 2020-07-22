@@ -15,7 +15,7 @@ metadata:
     # nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
 spec:
   rules:
-    - host: argocd-server.polysign.io
+    - host: argocd-server.rel.polysign.io
   backend:
     serviceName: debian-test
     servicePort: 8080

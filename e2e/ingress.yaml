@@ -2,7 +2,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: debian-test
+  name: staging-ingress
   namespace: argocdtest
   annotations:
           # cert-manager.io/cluster-issuer: letsencrypt-prod
